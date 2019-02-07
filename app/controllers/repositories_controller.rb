@@ -5,7 +5,7 @@ class RepositoriesController < ApplicationController
     @resp = Faraday.get 'https://api.github.com/search/repositories' do |req|
     # req.params['client_id'] = clientID
     # req.params['client_secret'] = clientSecret
-    req.params['q'] = query
+    req.params['q'] = "tetris"
     end
     body = JSON.parse(@resp.body)
     if @resp.success?
