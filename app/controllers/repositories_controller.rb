@@ -12,7 +12,7 @@ class RepositoriesController < ApplicationController
     end
     body = JSON.parse(@resp.body)
     if @resp.success?
-      binding.pry
+byebug
       @repositories = body["response"]["repositories"]
     else
       @error = body["meta"]["errorDetail"]
