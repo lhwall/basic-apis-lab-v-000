@@ -13,7 +13,7 @@ class RepositoriesController < ApplicationController
     body = JSON.parse(@resp.body)
     if @resp.success?
 byebug
-      @repositories = body["response"]["repositories"]
+      @repositories = @resp.body["response"]
     else
       @error = body["meta"]["errorDetail"]
     end
