@@ -4,7 +4,7 @@ class RepositoriesController < ApplicationController
     binding.pry
     begin
     @resp = Faraday.get 'https://api.foursquare.com/v2/venues/search' do |req|
-        req.params['client_id'] = clientID
+    req.params['client_id'] = clientID
     req.params['client_secret'] = clientSecret
     end
     body = JSON.parse(@resp.body)
